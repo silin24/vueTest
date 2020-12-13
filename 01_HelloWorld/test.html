@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <title>01_HelloWorld</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <!--
   1. 引入Vue.js
   2. 创建Vue对象
@@ -14,31 +16,39 @@
   4. 显示数据 : {{xxx}}
   5. 理解vue的mvvm实现
 
+
+
+  api:接口(两含义):1.前后台交互的接口
+           2.语法 :定义了什么方法,指令.....
+
+
   模板页面:html+js
-  js的存在形式:
-  指令
-  插值
+  js的存在形式: 里面包含的是js表达式(指令和插值),从data/props/computed读数据
+  指令: V- vue自定义的标签属性   v-modul
+  插值: 动态显示数据,文本标签体   {{xxx}}
 -->
     <div id="test">
-      <input type="text" v-model="msg" />
-      <p>Hello {{msg}}</p>
+        <input type="text" v-model="msg" />
+        <p>Hello {{msg}}</p>
     </div>
-
-    <p class="demo">{{msg}}</p>
+    <p class="demo"> {{msg}}</p>
     <script type="text/javascript" src="../js/vue.js"></script>
     <script>
-      const vm = new Vue({
+    const vm = new Vue({
         el: "#test",
         data: {
-          msg: "atguigu",
+            msg: "atguigu",
         },
-      });
-
-      new Vue({
+    });
+    setTimeout(() => {
+        vm.msg = 'xxxxx'
+    }, 1000)
+    new Vue({
         data: {
-          msg: "demo",
+            msg: "demo123456789",
         },
-      }).$mount(".demo");
+    }).$mount(".demo");
     </script>
-  </body>
+</body>
+
 </html>

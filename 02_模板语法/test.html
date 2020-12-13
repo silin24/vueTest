@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <title>02_模板语法</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <!--
 1. 模板的理解:
   动态的html页面
@@ -30,32 +32,30 @@
 -->
     <script type="text/javascript" src="../js/vue.js"></script>
     <div id="app">
-      <h2>1. 双大括号表达式</h2>
-      <p>---{{msg.toUpperCase()}}------</p>
-
-      <h2>2. 指令一: 强制数据绑定</h2>
-      <a v-bind:href="url">go</a><br />
-      <a :href="url">go</a>
-
-      <h2>3. 指令二: 绑定事件监听</h2>
-      <button v-on:click="handle">demo1</button>
-      <button @click="handle">demo2</button>
+        <h2>1. 双大括号表达式</h2>
+        <p>---{{msg.toUpperCase()}}-------------</p>
+        <h2>2. 指令一: 强制数据绑定</h2>
+        <a v-bind:href="url">go</a><br />
+        <a :href="url">go</a>
+        <h2>3. 指令二: 绑定事件监听</h2>
+        <button v-on:click="handle">demo1</button>
+        <button @click="handle">demo2</button>
     </div>
-
     <script>
-      new Vue({
+    new Vue({
         el: "#app",
         data: {
-          msg: "i will back!",
-          url: "https://www.baidu.com",
+            msg: "i will back!",
+            url: "https://www.baidu.com",
         },
         methods: {
-          handle(event) {
-            // alert("11111");
-            alert(event.target.innerHTML);
-          },
+            handle(event) {
+                // alert("11111");
+                alert(event.target.innerHTML);
+            },
         },
-      });
+    });
     </script>
-  </body>
+</body>
+
 </html>
